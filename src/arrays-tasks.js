@@ -38,7 +38,17 @@ function getIntervalArray(start, end) {
  *    sumArrays([-1, 0, 1], [1, 2, 3, 4]) => [0, 2, 4, 4]
  */
 function sumArrays(arr1, arr2) {
-  
+  let arrSum;
+  if (arr1.length > arr2.length) {
+    arrSum = arr1.map((item, index) =>
+      arr2[index] ? item + arr2[index] : item
+    );
+  } else {
+    arrSum = arr2.map((item, index) =>
+      arr1[index] ? item + arr1[index] : item
+    );
+  }
+  return arrSum;
 }
 
 /**
